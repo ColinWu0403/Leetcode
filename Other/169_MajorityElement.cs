@@ -28,4 +28,25 @@ public class Solution {
 
         return result;
     }
+
+    // O(n) Time and O(1) Space Solution using Boyer-Moore Voting Algorithm
+    public int MajorityElementImproved(int[] nums) {
+
+        int result = 0;
+        int maxCount = 0;
+        foreach (int num in nums) {
+            if (maxCount == 0) {
+                result = num;
+            }
+            
+            if (num == result) {
+                maxCount += 1;
+            }
+            else {
+                maxCount -= 1;
+            }
+        }
+
+        return result;
+    }
 }
